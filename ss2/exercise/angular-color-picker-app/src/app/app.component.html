@@ -1,0 +1,10 @@
+<h2>Color Picker</h2>
+
+<div class="color-list">
+  <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="selectedColor = color">{{ color }}</button>
+</div>
+
+<div class="selected-color" *ngIf="selectedColor">
+  You selected: <span [ngStyle]="{'background-color': selectedColor}">{{ selectedColor }}</span>
+</div>
+

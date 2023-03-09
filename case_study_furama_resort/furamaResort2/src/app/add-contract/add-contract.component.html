@@ -1,0 +1,64 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addLabel">Thêm hợp đồng</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label ">Ngày bắt đầu</label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" id="startDate">
+          <p id="startDateError"></p>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Ngày kết thúc</label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" id="endDate">
+          <p id="endDateError"></p>
+        </div>
+
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Tiền đặt cọc</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="deposit">
+          <p id="depositError"></p>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Khách hàng thuê dịch vụ</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="customerType">
+            <option value="">Chọn Khách hàng</option>
+            <option></option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Dịch vụ</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="faciity">
+            <option value="">Chọn dịch vụ</option>
+            <option></option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Nhân viên</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="employee">
+            <option value="">Chọn dịch vụ</option>
+            <option></option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer justify-content-center">
+      <button type="button" class="btn btn-secondary" id="btnCancel" data-bs-dismiss="modal">Hủy bỏ
+      </button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div style="max-width: 35%; padding: 30px 40px 30px 0;border: 1px solid black" [formGroup]="loginForm" >
+  <table>
+    <tr>
+      <td>Account:</td>
+      <td><input type="text" formControlName="email"></td>
+      <td>
+        <p style="color: red"
+           *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.touched">
+          Email khong dc de trong </p>
+        <p style="color: red" *ngIf="loginForm.controls.email.hasError('email')">Email khong dung dinh dang </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="password" formControlName="password"></td>
+      <td>
+        <p style="color: red" *ngIf="loginForm.controls.password.hasError('minlength')">Password phai lon
+          hon 6 ki tu
+        </p>
+        <p
+          style="color: red"
+          *ngIf="loginForm.controls.password.hasError('required') &&  loginForm.controls.password.touched "> mat khau
+          khong dc de trong
+        </p>
+      </td>
+    </tr>
+
+    <td>
+      <button type="submit">Log in</button>
+    </td>
+  </table>
+
+</div>

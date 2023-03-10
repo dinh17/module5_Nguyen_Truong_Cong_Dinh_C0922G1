@@ -15,6 +15,7 @@ import { ListCustomerComponent } from './list-customer/list-customer.component';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { AddContractComponent } from './add-contract/add-contract.component';
+import { ListContractComponent } from './list-contract/list-contract.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AddContractComponent } from './add-contract/add-contract.component';
     ListCustomerComponent,
     EditCustomerComponent,
     AddCustomerComponent,
-    AddContractComponent
+    AddContractComponent,
+    ListContractComponent
   ],
   imports: [
     BrowserModule,

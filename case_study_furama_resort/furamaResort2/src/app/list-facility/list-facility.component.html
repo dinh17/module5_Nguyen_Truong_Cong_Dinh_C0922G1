@@ -1,90 +1,36 @@
-<div class="row room-grid">
+<div class="p-3">
+  <h2 class="text-center fw-bold text-light my-3">DANH SÁCH DỊCH VỤ</h2>
 
-  <div class="col-sm-6 col-lg-4">
-    <div class="room-card">
-      <div class="room-card-photo">
-        <img width="370" height="239"
-             src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
-             class="img-fluid wp-post-image" alt=""/>
-      </div>
-      <div class="room-card-info">
-        <div class="row">
-          <div class="col">
-            <h3 class="room-type"><a href="https://furamavietnam.com/rooms/ocean-suite/">OCEAN SUITE</a>
-            </h3>
-          </div>
+  <table class="table table-light table-striped table-bordered">
+    <tr class="table-dark text-light">
+      <th class="text-center"><i class="fa-sharp fa-solid fa-bolt"></i></th>
+      <th>Tên dịch vụ</th>
+      <th>Diện tích (m<sup>2</sup>)</th>
+      <th>Chi phí thuê</th>
+      <th>Số người tối đa</th>
+      <th>Kiểu thuê</th>
+      <th>Loại dịch vụ</th>
+      <th class="text-center">Sửa</th>
+      <th class="text-center">Xóa</th>
+    </tr>
 
-        </div>
-        <div class="row">
-          <div>
-            <button type="button">EDIT</button>
-            <button type="button"
-                    class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#deleteService">
-              DELETE
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-lg-4">
-    <div class="room-card">
-      <div class="room-card-photo">
-        <img width="370" height="239"
-             src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg"
-             class="img-fluid wp-post-image" alt=""/>
-      </div>
-      <div class="room-card-info">
-        <div class="row">
-          <div class="col">
-            <h3 class="room-type"><a href="https://furamavietnam.com/rooms/ocean-studio-suite/">OCEAN STUDIO
-              SUITE</a></h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div>
-            <button type="button"><a href="editFacility.html" style="text-decoration: none">EDIT</a></button>
-            <button type="button"
-                    class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#deleteService">
-              DELETE
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-lg-4">
-    <div class="room-card">
-      <div class="room-card-photo">
-        <img width="370" height="239"
-             src="https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-370x239.jpg"
-             class="img-fluid wp-post-image" alt=""/>
-      </div>
-      <div class="room-card-info">
-        <div class="row">
-          <div class="col">
-            <h3 class="room-type"><a href="https://furamavietnam.com/rooms/ocean-deluxe/">OCEAN DELUXE</a>
-            </h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div>
-            <button type="button"><a href="editFacility.html" style="text-decoration: none">EDIT</a></button>
-            <button type="button"
-                    class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#deleteService">
-              DELETE
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+    <tr *ngFor="let item of facilities;index as i ">
+      <td>{{i + 1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.area}}</td>
+      <td>{{item.cost}}</td>
+      <td>{{item.maxPeople}}</td>
+      <td>{{item.rentType.name}}</td>
+      <!--      <td>{{item.itemType.name}}</td>-->
+      <td>{{item.standardRoom}}</td>
+      <!--      <td>{{item.descriptionOtherConvenience}}</td>-->
+      <!--      <td>{{item.poolArea}}</td>-->
+      <!--      <td>{{item.numberOfFloors}}</td>-->
+      <td>{{item.facilityFree}}</td>
+      <td>
+       edit
+      </td>
+      <td>delete</td>
+    </tr>
+  </table>
 </div>

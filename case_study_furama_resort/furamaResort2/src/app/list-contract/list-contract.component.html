@@ -1,24 +1,23 @@
-<table>
-  <thead>
-  <tr class="bg-dark text-light">
-    <th scope="col">STT</th>
-    <th scope="col">Dịch vụ</th>
-    <th scope="col">Khách hàng</th>
-    <th scope="col">Ngày bắt đầu</th>
-    <th scope="col">Ngày kết thúc</th>
-    <th scope="col">Tiền đặt cọc</th>
-    <th scope="col">Tổng tiền</th>
-    <th scope="col"></th>
-    <th scope="col"></th>
+<table class="table table-light table-striped table-bordered">
+  <tr class="table-dark text-light">
+    <th class="text-center"><i class="fa-sharp fa-solid fa-bolt"></i></th>
+    <th>Tên dịch vụ</th>
+    <th>Tên nhân viên</th>
+    <th>Tên khách hàng</th>
+    <th>Ngày bắt đầu</th>
+    <th>Ngày kết thúc</th>
+    <th>Tiền đặt cọc</th>
+    <th>Tổng tiền</th>
+    <th class="text-center">Các dịch vụ đi kèm</th>
   </tr>
-  </thead>
-  <tbody>
 
-    <td>
-      <button>+
-      </button>
-      <button >Danh sách dịch vụ đi kèm
-      </button>
-    </td>
-  </tbody>
+  <tr *ngFor="let item of contracts ;index as i">
+    <td scope="row" >{{i+1}}</td>
+    <td>{{i + 1}}</td>
+    <td>{{item.startDate}}</td>
+    <td>{{item.endDate}}</td>
+    <td>{{item.deposit}}</td>
+    <td>{{item.total}}</td>
+  </tr>
 </table>
+</div>

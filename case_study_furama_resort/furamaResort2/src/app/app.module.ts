@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FacilitiComponent } from './faciliti/faciliti.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
@@ -20,7 +19,6 @@ import { ListContractComponent } from './list-contract/list-contract.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FacilitiComponent,
     HeaderComponent,
     FooterComponent,
     NavComponent,

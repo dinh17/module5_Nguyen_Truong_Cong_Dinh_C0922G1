@@ -1,49 +1,31 @@
-<table class="table table-striped border">
-  <thead>
-  <tr>
-    <th scope="col">STT</th>
-    <th scope="col">Name</th>
-    <th scope="col">Birthday</th>
-    <th scope="col">Gender</th>
-    <th scope="col">ID card</th>
-    <th scope="col">Phone</th>
-    <th scope="col">Email</th>
-    <th scope="col">Customer type</th>
-    <th scope="col">Address</th>
-    <th scope="col">Edit</th>
-    <th scope="col">Delete</th>
-  </tr>
-  </thead>
+<div class="p-3">
+  <h2 class="text-center fw-bold text-light my-3">DANH SÁCH KHÁCH HÀNG</h2>
 
-  <tbody>
-  <tr>
-    <td>1</td>
-    <td>Dinh</td>
-    <td>12-2-2000</td>
-    <td>Nam</td>
-    <td>123123</td>
-    <td>112312312</td>
-    <td>1@gmail.com</td>
-    <td>vip</td>
-    <td>Ha Noi</td>
+  <table class="table table-light table-striped table-bordered">
+    <tr class="table-dark text-light">
+      <th class="text-center"><i class="fa-sharp fa-solid fa-bolt"></i></th>
+      <th>Tên khách hàng</th>
+      <th>Ngày sinh</th>
+      <th>Giới tính</th>
+      <th>SĐT</th>
+      <th>Địa chỉ</th>
+      <th>Loại khách</th>
+      <th class="text-center">Sửa</th>
+      <th class="text-center">Xóa</th>
+    </tr>
 
-
-    <td>
-      <button
-              type="button" class="btn btn-light" data-bs-toggle="modal"
-              data-bs-target="#editCustomer">
-        <img src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/null/external-create-social-media-interface-anggara-basic-outline-anggara-putra.png"/>
-      </button>
-    </td>
-    <td>
-      <button
-              type="button"
-              class="btn btn-light" data-bs-toggle="modal"
-              data-bs-target="#deleteCustomer">
-        <img src="https://img.icons8.com/ios-glyphs/30/null/trash--v1.png"/>
-      </button>
-    </td>
-  </tr>
-
-  </tbody>
-</table>
+    <tr *ngFor="let item of customers; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.dayOfBirth}}</td>
+      <td>{{item.idCard}}</td>
+      <td>{{item.phoneNumber}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.address}}</td>
+      <td>{{item.customerType.name}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>

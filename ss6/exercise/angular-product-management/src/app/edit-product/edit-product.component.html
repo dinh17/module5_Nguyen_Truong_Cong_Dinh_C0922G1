@@ -33,11 +33,20 @@
         <input type="text" class="form-control" id="description" formControlName="description" aria-describedby="descriptionError">
       </div>
     </div>
+    <div>
+      <div>Thể loại</div>
+      <div>
+        <select [compareWith]="compareFn" formControlName="category">
+          <option *ngFor="let item of category" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+    </div>
     <div class="row mb-3">
       <div class="col-4"></div>
       <div class="col-4">
         <button type="submit" class="btn btn-primary">Cập nhật</button>
       </div>
+
     </div>
   </form>
 </div>

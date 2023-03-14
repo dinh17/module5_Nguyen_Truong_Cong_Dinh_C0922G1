@@ -1,0 +1,18 @@
+{
+  "todos": [
+    {
+      "content": "làm bài5",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "content": "chép bài",
+      "complete": false
+    },
+    {
+      "id": 4,
+      "content": " bài tập",
+      "complete": false
+    }
+  ]
+}

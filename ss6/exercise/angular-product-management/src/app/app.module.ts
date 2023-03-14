@@ -7,20 +7,20 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { ListProductComponent } from './list-product/list-product.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EditProductComponent } from './edit-product/edit-product.component';
-import { DeleteProductComponent } from './delete-product/delete-product.component';
 
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     CreateProductComponent,
     ListProductComponent,
     EditProductComponent,
-    DeleteProductComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+      HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

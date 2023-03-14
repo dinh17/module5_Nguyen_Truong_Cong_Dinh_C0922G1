@@ -7,6 +7,7 @@
         <td>Tên</td>
         <td>Giá</td>
         <td>Mô tả</td>
+        <Td>Thể loại</Td>
         <td>Edit</td>
         <td>Delete</td>
       </tr>
@@ -15,9 +16,11 @@
         <td>{{product.name}}</td>
         <td>{{product.price}}</td>
         <td>{{product.description}}</td>
+        <td>{{product.category?.name}}</td>
         <a [routerLink]="['/edit-product', product.id]">Edit</a>
         <td>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="p=product">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  (click)="temp=product">
             Delete
           </button>
         </td>
@@ -33,11 +36,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="color: red">
-          Bạn có chắc chắn muốn xoá {{p.name}} không ?
+          Bạn có chắc chắn muốn xoá {{temp.name}} không ?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="delete(p.id)" data-bs-dismiss="modal">Delete</button>
+          <button type="button" class="btn btn-primary" (click)="delete(temp.id)" data-bs-dismiss="modal">Delete</button>
         </div>
       </div>
     </div>

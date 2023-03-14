@@ -1,64 +1,66 @@
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="addLabel">Thêm hợp đồng</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label ">Ngày bắt đầu</label>
-        <div class="col-sm-9">
-          <input type="date" class="form-control" id="startDate">
-          <p id="startDateError"></p>
-        </div>
+<div class="card-header">
+  <strong id="inDam"><h1 class="card-title" style="color: red">Create Contract</h1></strong>
+</div>
+<form [formGroup]="formAddContract">
+  <div class="card-body">
+    <div class="row col-md-12 col-xl-12 col-sm-12">
+
+
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+        <label class="form-label" for="facility">Name Facility </label><br>
+        <select style="width: 100%; height: 70%;" class="form-select" id="facility" formControlName="facility">
+          <option>IT</option>
+          <option>Blade Runner</option>
+          <option>Thor Ragnarok</option>
+        </select>
+        <span style="color: red"
+              *ngIf="formAddContract.controls.facility.hasError('required')">  không được để trống</span>
       </div>
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Ngày kết thúc</label>
-        <div class="col-sm-9">
-          <input type="date" class="form-control" id="endDate">
-          <p id="endDateError"></p>
-        </div>
+
+
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+        <label class="form-label" for="name_customer">Name Customer </label><br>
+        <select style="width: 100%; height: 70%;" class="form-select" id="name_customer" formControlName="customer">
+          <option>IT</option>
+          <option>Blade Runner</option>
+          <option>Thor Ragnarok</option>
+        </select>
+        <span style="color: red"
+              *ngIf="formAddContract.controls.customer.hasError('required')">  không được để trống</span>
+
 
       </div>
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Tiền đặt cọc</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="deposit">
-          <p id="depositError"></p>
-        </div>
+
+
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+        <label class="form-label" for="dayStart">Day Start:</label>
+        <input type="date" class="form-control time-mask" placeholder="?" id="dayStart" formControlName="startDate">
+        <span style="color: red"
+              *ngIf="formAddContract.controls.startDate.hasError('required')">  không được để trống</span>
+
       </div>
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Khách hàng thuê dịch vụ</label>
-        <div class="col-sm-9">
-          <select class="form-control" id="customerType">
-            <option value="">Chọn Khách hàng</option>
-            <option></option>
-          </select>
-        </div>
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+        <label class="form-label" for="endDateForm">End Day:</label>
+        <input type="text" class="form-control numeral-mask" placeholder="input number people" id="endDateForm"
+               formControlName="endDate">
+        <span style="color: red"
+              *ngIf="formAddContract.controls.endDate.hasError('required')">  không được để trống</span>
+
+
       </div>
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Dịch vụ</label>
-        <div class="col-sm-9">
-          <select class="form-control" id="faciity">
-            <option value="">Chọn dịch vụ</option>
-            <option></option>
-          </select>
-        </div>
+      <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+        <label class="form-label" for="deposit">Deposit(VNĐ):</label>
+        <input type="number" class="form-control block-mask" placeholder="giá" id="deposit" formControlName="deposit">
+        <span style="color: red"
+              *ngIf="formAddContract.controls.deposit.hasError('required')">  không được để trống</span>
+
       </div>
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Nhân viên</label>
-        <div class="col-sm-9">
-          <select class="form-control" id="employee">
-            <option value="">Chọn dịch vụ</option>
-            <option></option>
-          </select>
-        </div>
-      </div>
+
+
     </div>
-    <div class="modal-footer justify-content-center">
-      <button type="button" class="btn btn-secondary" id="btnCancel" data-bs-dismiss="modal">Hủy bỏ
-      </button>
-      <button type="button" class="btn btn-primary">Save changes</button>
+    <div class="col-12">
+      <button type="reset" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
+      <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
     </div>
   </div>
-</div>
+</form>

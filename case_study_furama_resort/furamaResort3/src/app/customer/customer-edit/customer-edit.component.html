@@ -1,0 +1,76 @@
+<form [formGroup]="customerGroup" (ngSubmit)="submitEdit()">
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Họ Tên: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Ngày Sinh</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" formControlName="dateOfBirth">
+      <span style="color: red"
+            *ngIf="customerGroup.controls.dateOfBirth.hasError('required')">  không được để trống</span>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label class="col-sm-2">Gender: </label>
+    <div class="col-sm-10">
+      <label>
+        <input type="radio"  [value]="true"  formControlName="gender">
+      </label>Nam
+      <label>
+        <input type="radio"  [value]="false" formControlName="gender">
+      </label>Nữ
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Số CMND</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="iDCard">
+      <span style="color: red"
+            *ngIf="customerGroup.controls.iDCard.hasError('required')">  không được để trống</span>
+    </div>
+  </div>
+
+
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Số Điện Thoại </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="phoneNumber">
+      <span style="color: red"
+            *ngIf="customerGroup.controls.phoneNumber.hasError('required')">  không được để trống</span>
+    </div>
+  </div>
+
+
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Email </label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" formControlName="email">
+      <span style="color: red"
+            *ngIf="customerGroup.controls.email.hasError('required')">  không được để trống</span>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">Địa Chỉ </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="address">
+      <span style="color: red" *ngIf="customerGroup.controls.address.hasError('required')">  không được để trống</span>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-sm-2">Customer Type</div>
+    <div class="col-sm-10">
+      <select class="form-select" formControlName="customerType" [compareWith]="compareFn">
+
+        <option *ngFor="let item of customerType" [ngValue]="item">{{item.name}}</option>
+      </select>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-primary">Xác Nhận</button>
+</form>
+
+

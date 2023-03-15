@@ -1,0 +1,39 @@
+
+<br>
+<div class="row">
+  <a routerLink="/facility/create"><button type="button" class="btn btn-primary">Thêm dịch vụ mới</button></a>
+</div>
+<br>
+<div class="bg-img">
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <ng-container *ngFor="let item of facilityList">
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100" >
+          <img [src]="item.image" class="card-img-top imgcard" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <span class="card-text">Room size: {{item.area}} m<sup>2</sup></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span> <a href="#" class="btn btn-primary">Know more</a></span>
+          </div>
+          <div class="card-footer">
+            <div class="button-container" >
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal">Sửa</button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Xoá</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="d-flex justify-content-center">
+    <a class="btn btn-primary" id="preButton">Previous</a>
+    <span class="btn btn-light" >1</span>
+    <a class="btn btn-primary" id="nexButton">Next</a>
+  </div>
+
+  <br> <br><br>
+</div>

@@ -1,0 +1,58 @@
+
+<!--Modal Create-->
+
+<div class="modal-body d-flex justify-content-center">
+  <form [formGroup]="contracts" (ngSubmit)="createContract()" >
+    <h1 >Thêm hợp đồng mới</h1>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Ngày Bắt Đầu</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control"  formControlName="startDay">
+        <p class="errorForm" *ngIf="contracts.controls.startDay.hasError('required') && contracts.controls.startDay.touched">Vui lòng nhập ngày bắt đầu</p>
+
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Ngày Kết Thúc</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" formControlName="endDay" >
+        <p class="errorForm" *ngIf="contracts.controls.endDay.hasError('required') && contracts.controls.endDay.touched">Vui lòng nhập ngày kết thúc</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Tiền Gửi</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" formControlName="cost" >
+        <p class="errorForm" *ngIf="contracts.controls.cost.hasError('required') && contracts.controls.cost.touched">Vui lòng nhập chi phí thuê</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Tổng Tiền</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" readonly id="tongTien">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Khách Hàng</label>
+      <div class="col-sm-10">
+        <select class="form-control" formControlName="customer" >
+          <option *ngFor="let cus of customers"
+                  [ngValue]="cus">{{cus.name}}</option>
+        </select>
+        <p class="errorForm" *ngIf="contracts.controls.customer.hasError('required') && contracts.controls.customer.touched">Vui lòng chọn khách hàng</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Dịch Vụ</label>
+      <div class="col-sm-10">
+        <select class="form-control" formControlName="facility" >
+          <option *ngFor="let fac of facilities"
+                  [ngValue]="fac">{{fac.name}}</option>
+          <p class="errorForm" *ngIf="contracts.controls.facility.hasError('required') && contracts.controls.facility.touched">Vui lòng chọn dịch vụ</p>
+        </select>
+      </div>
+    </div>
+    <button type="submit"  class="btn btn-primary">Thêm mới</button>
+  </form>
+</div>
+

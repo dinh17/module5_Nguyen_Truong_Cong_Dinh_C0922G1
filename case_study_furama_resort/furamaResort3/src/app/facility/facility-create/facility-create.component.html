@@ -1,0 +1,108 @@
+
+<br>
+<br>
+<div class="d-fex justify-content-center">
+  <form [formGroup]="facilityList" (ngSubmit)="createFacility()">
+    <input type="hidden" name="validate" value="add">
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Loại Dịch Vụ</label>
+      <div class="col-sm-10">
+        <select [class.successInput]="facilityList.controls.facilityType.valid && facilityList.controls.facilityType.dirty" [class.borderError]="facilityList.controls.facilityType.invalid && facilityList.controls.facilityType.pristine" class="form-control"  formControlName="facilityType" (change)="checkValue()" >
+          <option [value]="null"  [selected]="true" [disabled]="true" >Chọn Loại Dịch Vụ</option>
+          <option *ngFor="let x of facilityTypeList" class="form-control" [ngValue]="x"  >{{x.name}}</option>
+        </select>
+        <p class="errorForm" *ngIf="facilityList.controls.facilityType.hasError('required') && facilityList.controls.facilityType.pristine">Vui lòng chọn loại dịch vụ</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Tên Dịch Vụ</label>
+      <div class="col-sm-10">
+        <input [class.successInput]="facilityList.controls.name.valid && facilityList.controls.name.dirty" [class.borderError]="facilityList.controls.name.invalid && facilityList.controls.name.pristine" type="text" class="form-control" formControlName="name">
+        <p class="errorForm" *ngIf="facilityList.controls.name.hasError('required') && facilityList.controls.name.dirty">Vui lòng nhập tên dịch vụ</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Diện Tích</label>
+      <div class="col-sm-10">
+        <input [class.successInput]="facilityList.controls.area.valid && facilityList.controls.area.dirty" [class.borderError]="facilityList.controls.area.invalid && facilityList.controls.area.pristine" type="number" class="form-control" formControlName="area">
+        <p class="errorForm" *ngIf="facilityList.controls.area.hasError('required') && facilityList.controls.area.dirty">Vui lòng nhập diện tích sử dụng</p>
+
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Chi Phí Thuê</label>
+      <div class="col-sm-10">
+        <input [class.successInput]="facilityList.controls.cost.valid && facilityList.controls.cost.touched" [class.borderError]="facilityList.controls.cost.invalid && facilityList.controls.cost.pristine"  type="number" class="form-control" formControlName="cost">
+        <p class="errorForm" *ngIf="facilityList.controls.cost.hasError('required') && facilityList.controls.cost.pristine">Vui lòng nhập chi phí thuê</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Số Người Tối Đa</label>
+      <div class="col-sm-10">
+        <input [class.successInput]="facilityList.controls.maxPeople.valid && facilityList.controls.maxPeople.touched" [class.borderError]="facilityList.controls.maxPeople.invalid && facilityList.controls.maxPeople.dirty" type="number" class="form-control" formControlName="maxPeople">
+        <p class="errorForm" *ngIf="facilityList.controls.maxPeople.hasError('required') && facilityList.controls.maxPeople.pristine">Vui lòng nhập số người tối đa</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Kiểu Thuê</label>
+      <div class="col-sm-10">
+        <select [class.successInput]="facilityList.controls.rentType.valid && facilityList.controls.rentType.touched" [class.borderError]="facilityList.controls.rentType.invalid && facilityList.controls.rentType.touched" class="form-control" formControlName="rentType">
+          <option [value]="null" [selected]="true" [disabled]="true" >Chọn Kiểu Thuê</option>
+          <option *ngFor="let x of rentTypeList" class="form-control" [ngValue]="x" >{{x.name}}</option>
+        </select>
+        <p class="errorForm" *ngIf="facilityList.controls.rentType.hasError('required') && facilityList.controls.rentType.pristine">Chọn kiểu thuê</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Hình Ảnh</label>
+      <div class="col-sm-10">
+        <input [class.successInput]="facilityList.controls.image.valid && facilityList.controls.image.touched" [class.imageError]="facilityList.controls.image.invalid && facilityList.controls.image.touched" type="text" class="form-control" formControlName="image">
+        <p class="urlImage" *ngIf="facilityList.controls.image.hasError('required') && facilityList.controls.image.pristine">Hãy nhập link url để cho có hỉnh ảnh đẹp hơn :D</p>
+
+      </div>
+    </div>
+    <div *ngIf="idAdd == 1 || idAdd == 2" class="mb-3 row" id="standardAdd">
+      <label class="col-sm-2 col-form-label">Tiêu Chuẩn Phòng</label>
+      <div class="col-sm-10">
+        <input #stanDard (change)="checkStandard(stanDard.value)" [class.successInput]="facilityList.controls.standard.valid && facilityList.controls.standard.dirty" [class.borderError]="facilityList.controls.standard.invalid && facilityList.controls.standard.dirty" type="text" class="form-control"  formControlName="standard">
+        <p class="errorForm" *ngIf="facilityList.controls.standard.hasError('nullStandard') && facilityList.controls.standard.dirty">{{standardError}}</p>
+
+      </div>
+    </div>
+    <div *ngIf="idAdd == 1 || idAdd == 2" class="mb-3 row" id="descriptionAdd">
+      <label class="col-sm-2 col-form-label">Mô Tả Khác</label>
+      <div class="col-sm-10">
+        <input #decription (change)="checkDescription(decription.value)" [class.successInput]="facilityList.controls.description.valid && facilityList.controls.description.dirty" [class.borderError]="facilityList.controls.description.invalid && facilityList.controls.description.dirty" type="text" class="form-control" formControlName="description">
+        <p class="errorForm" *ngIf="facilityList.controls.description.hasError('nullDescription') && facilityList.controls.description.dirty">{{descriptionError}}</p>
+
+      </div>
+    </div>
+    <div *ngIf="idAdd === 1 " class="mb-3 row" id="poolAreaAdd">
+      <label class="col-sm-2 col-form-label">Diện Tích Hồ Bơi</label>
+      <div class="col-sm-10">
+        <input #pool (change)="checkPool(pool.value)" [class.successInput]="facilityList.controls.poolArea.valid && facilityList.controls.poolArea.dirty" [class.borderError]="facilityList.controls.poolArea.invalid && facilityList.controls.poolArea.dirty" type="number" class="form-control" formControlName="poolArea">
+        <p class="errorForm" *ngIf="facilityList.controls.poolArea.hasError('nullPoolArea') && facilityList.controls.poolArea.dirty">{{messagePoolError}}</p>
+
+      </div>
+    </div>
+    <div *ngIf="idAdd == 1 || idAdd == 2" class="mb-3 row" id="numberOfFloorAdd">
+      <label class="col-sm-2 col-form-label">Số Tầng</label>
+      <div class="col-sm-10">
+        <input (change)="checkFloor(floor.value)" #floor [class.successInput]="facilityList.controls.floor.valid && facilityList.controls.floor.dirty" [class.borderError]="facilityList.controls.floor.invalid && facilityList.controls.floor.dirty" type="number" class="form-control" formControlName="floor">
+        <p class="errorForm" *ngIf="facilityList.controls.floor.hasError('nullFloor') && facilityList.controls.floor.dirty">{{floorError}}</p>
+      </div>
+    </div>
+    <div *ngIf="idAdd === 3" class="mb-3 row " id="addFreeService">
+      <label class="col-sm-2 col-form-label">Dịch Vụ Miễn Phí</label>
+      <div class="col-sm-10">
+        <input (change)="checkFreeFacility(free.value)" #free [class.successInput]="facilityList.controls.facilityFree.valid && facilityList.controls.facilityFree.dirty" [class.borderError]="facilityList.controls.facilityFree.invalid && facilityList.controls.facilityFree.dirty" type="text" class="form-control" formControlName="facilityFree">
+        <p class="errorForm" *ngIf="facilityList.controls.facilityFree.hasError('nullFreeFacility') && facilityList.controls.facilityFree.dirty">Hãy nhập dịch vụ miễn phí đi kèm cho Room</p>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="facilityList.invalid" class="btn btn-primary" data-bs-dismiss="modal">Thêm  mới</button>
+
+  </form>
+</div>
+
+

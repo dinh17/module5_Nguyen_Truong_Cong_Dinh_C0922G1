@@ -1,0 +1,69 @@
+<h2 class="d-flex justify-content-center text-danger">Thêm mới khách hàng</h2>
+<div class="card bg-success offset-3 col-6">
+  <form [formGroup]="customerGroup" (ngSubmit)="submit()">
+    <div class="m-4 row">
+      <div class="col-sm-2">Customer Type Name</div>
+      <div class="col-sm-10">
+        <select class="form-select" formControlName="customerType">
+          <option value="">Customer Type Name</option>
+          <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label  class="col-sm-2 col-form-label">Name: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="name">
+        <p class="text-danger" *ngIf="customerGroup.controls.name.hasError('required')">phair co</p>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label  class="col-sm-2 col-form-label">Date Of Birth: </label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control"  formControlName="dateOfBirth">
+        <p class="text-danger" *ngIf="customerGroup.controls.dateOfBirth.hasError('required')">Hãy nhập dữ liệu</p>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label class="col-sm-2">Gender: </label>
+      <div class="col-sm-10">
+        <label>
+<!--          <input type="radio" [value]="true" [(ngModel)]="select" formControlName="gender">-->
+          <input type="radio" [value]="true"  formControlName="gender">
+        </label>Nam
+        <label>
+          <input type="radio"  [value]="false" formControlName="gender">
+        </label>Nữ
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label class="col-sm-2 col-form-label" >ID Card: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="iDCard">
+        <p class="text-danger" *ngIf="customerGroup.controls.iDCard.hasError('required')">Hãy nhập dữ liệu</p>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label class="col-sm-2 col-form-label">Phone Number: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="phoneNumber">
+        <p class="text-danger" *ngIf="customerGroup.controls.phoneNumber.hasError('required')">Hãy nhập dữ liệu</p>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label class="col-sm-2 col-form-label">Email: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="email">
+        <p class="text-danger" *ngIf="customerGroup.controls.email.hasError('required')">Hãy nhập dữ liệu</p>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label class="col-sm-2 col-form-label">Address: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="address">
+        <p class="text-danger" *ngIf="customerGroup.controls.address.hasError('required')">Hãy nhập dữ liệu</p>
+      </div>
+    </div>
+    <button type="submit" class="d-flex justify-content-center btn btn-danger" style="margin: 0 auto">Save</button>
+  </form>
+</div>

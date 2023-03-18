@@ -12,6 +12,6 @@ export class CategoryService {
   constructor(private  httpClient: HttpClient) { }
 
   getAllCategory(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>('http://localhost:3000/category');
+    return this.httpClient.get<Category[]>('http://localhost:8080/category');
   }
 }

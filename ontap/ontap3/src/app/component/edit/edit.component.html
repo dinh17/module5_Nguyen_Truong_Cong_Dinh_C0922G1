@@ -5,8 +5,7 @@
     <div class="m-4 row">
       <label class="col-sm-2 col-form-label">So Xe: </label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" readonly formControlName="numberCard">
-
+        <input type="text" class="form-control" readonly formControlName="numberCar">
 
       </div>
     </div>
@@ -17,9 +16,7 @@
         <select class="form-select" formControlName="category" [compareWith]="compare">
           <option *ngFor="let item of category" [ngValue]="item">{{item.name}}</option>
         </select>
-        <p class="text-danger"
-           *ngIf="busGroup.controls.category.touched&&busGroup.controls.category.hasError('required')">khong duoc de
-          trong</p>
+        <p class="text-danger" *ngIf="busGroup.controls.category.hasError('required')"> Yeu cau phai nhap</p>
       </div>
     </div>
 
@@ -28,19 +25,15 @@
       <label class="col-sm-2 col-form-label">Name: </label>
       <div class="col-sm-10">
         <input type="text" class="form-control" formControlName="nameBus">
-        <p class="text-danger"
-           *ngIf="busGroup.controls.nameBus.touched&&busGroup.controls.nameBus.hasError('required')">khong duoc de
-          trong</p>
+        <p class="text-danger" *ngIf="busGroup.controls.nameBus.hasError('required')"> Yeu cau phai nhap</p>
       </div>
     </div>
 
     <div class="m-4 row">
       <label class="col-sm-2 col-form-label">Diem di: </label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="localForm">
-        <p class="text-danger"
-           *ngIf="busGroup.controls.localForm.touched&&busGroup.controls.localForm.hasError('required')">khong duoc de
-          trong</p>
+        <input type="text" class="form-control" formControlName="localFrom">
+        <p class="text-danger" *ngIf="busGroup.controls.localFrom.hasError('required')"> Yeu cau phai nhap</p>
       </div>
     </div>
 
@@ -48,9 +41,7 @@
       <label class="col-sm-2 col-form-label">Diem den: </label>
       <div class="col-sm-10">
         <input type="text" class="form-control" formControlName="localEnd">
-        <p class="text-danger"
-           *ngIf="busGroup.controls.localEnd.touched&&busGroup.controls.localEnd.hasError('required')">khong duoc de
-          trong</p>
+        <p class="text-danger" *ngIf="busGroup.controls.localEnd.hasError('required')"> Yeu cau phai nhap</p>
       </div>
     </div>
 
@@ -59,9 +50,7 @@
       <label class="col-sm-2 col-form-label">So Dien Thoai: </label>
       <div class="col-sm-10">
         <input type="text" class="form-control" formControlName="numberPhone">
-        <p class="text-danger"
-           *ngIf="busGroup.controls.numberPhone.touched&&busGroup.controls.numberPhone.hasError('required')">khong duoc
-          de trong</p>
+        <p class="text-danger" *ngIf="busGroup.controls.numberPhone.hasError('required')"> Yeu cau phai nhap</p>
       </div>
     </div>
 
@@ -70,26 +59,21 @@
       <div class="col-sm-10">
         <input type="email" class="form-control" formControlName="email">
       </div>
-      <p class="text-danger"
-         *ngIf="busGroup.controls.email.touched&&busGroup.controls.email.hasError('required')">khong duoc de trong</p>
+      <p class="text-danger" *ngIf="busGroup.controls.email.hasError('required')"> Yeu cau phai nhap</p>
     </div>
 
     <div class="m-4 row">
       <label class="col-sm-2 col-form-label">Gio di: </label>
       <div class="col-sm-10">
         <input type="time" class="form-control" formControlName="timeOut">
-        <p class="text-danger"
-           *ngIf="busGroup.controls.timeOut.touched&&busGroup.controls.timeOut.hasError('required')">khong duoc de
-          trong</p>
+        <p class="text-danger" *ngIf="busGroup.controls.timeOut.hasError('required')"> Yeu cau phai nhap</p>
       </div>
     </div>
     <div class="m-4 row">
       <label class="col-sm-2 col-form-label">Gio den: </label>
       <div class="col-sm-10">
         <input type="time" class="form-control" formControlName="timeIn">
-        <p class="text-danger"
-           *ngIf="busGroup.controls.timeIn.touched&&busGroup.controls.timeIn.hasError('required')">khong duoc de
-          trong</p>
+        <p class="text-danger" *ngIf="busGroup.controls.timeIn.hasError('required')"> Yeu cau phai nhap</p>
       </div>
     </div>
 

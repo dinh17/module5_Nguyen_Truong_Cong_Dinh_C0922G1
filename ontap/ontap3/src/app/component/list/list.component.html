@@ -24,10 +24,10 @@
   <tbody>
   <tr *ngFor="let bus of bus ,index as i">
     <td>{{i+1}}</td>
-    <td>{{bus.numberCard}}</td>
+    <td>{{bus.numberCar}}</td>
     <td>{{bus.category.name}}</td>
     <td>{{bus.nameBus}}</td>
-    <td>{{bus.localForm}}</td>
+    <td>{{bus.localFrom}}</td>
     <td>{{bus.localEnd}}</td>
     <td>{{bus.numberPhone}}</td>
     <td>{{bus.email}}</td>
@@ -61,7 +61,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" style="color: red">
-        Bạn có chắc chắn muốn xoá thong tin cua xe khach co so xe {{temp.numberCard}} không ?
+        Bạn có chắc chắn muốn xoá thong tin cua xe khach co so xe {{temp.numberCar}} không ?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

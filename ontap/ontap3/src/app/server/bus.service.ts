@@ -16,15 +16,16 @@ export class BusService {
   }
 
   delete(id: number) {
-    return this.httpClient.delete('http://localhost:3000/bus/' + id);
+    return this.httpClient.delete('http://localhost:8080/bus/' + id);
   }
 
 
   findById(id: number) {
-    return this.httpClient.get('http://localhost:3000/bus/' + id);
+    return this.httpClient.get<Bus>('http://localhost:8080/bus/' + id);
   }
 
-  editBus(value: any): Observable<Bus[]> {
-    return this.httpClient.put<Bus[]>('http://localhost:3000/bus/' + value.id, value);
+  editBus(bus: Bus) {
+    return this.httpClient.put('http://localhost:8080/bus/update/', bus);
   }
+
 }

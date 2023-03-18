@@ -3,10 +3,10 @@ import {Category} from './category';
 
 export interface Bus {
   id?: number;
-  numberCard?: number;
+  numberCar?: number;
   category?: Category;
   nameBus?: string;
-  localForm?: string;
+  localFrom?: string;
   localEnd?: string;
   numberPhone?: number;
   email?: string;

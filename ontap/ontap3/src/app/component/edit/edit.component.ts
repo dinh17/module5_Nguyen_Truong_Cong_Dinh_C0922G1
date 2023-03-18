@@ -17,9 +17,9 @@ export class EditComponent implements OnInit {
   category: Category[] = [];
   busGroup: FormGroup = new FormGroup({
     id: new FormControl(),
-    numberCard: new FormControl('', [Validators.required]),
+    numberCar: new FormControl('', [Validators.required]),
     category: new FormControl('', [Validators.required]),
-    localForm: new FormControl('', [Validators.required]),
+    localFrom: new FormControl('', [Validators.required]),
     localEnd: new FormControl('', [Validators.required]),
     nameBus: new FormControl('', [Validators.required]),
     numberPhone: new FormControl('', [Validators.required]),

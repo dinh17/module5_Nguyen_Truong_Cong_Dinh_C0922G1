@@ -1,0 +1,64 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Dinh",
+      "gender": true,
+      "dateOfBirth": "2023-03-26",
+      "customerType": {
+        "id": 1,
+        "name": "vip"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Dinh",
+      "gender": true,
+      "dateOfBirth": "2023-03-26",
+      "customerType": {
+        "id": 2,
+        "name": "binhthuong"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Dinh",
+      "gender": true,
+      "dateOfBirth": "2023-03-26",
+      "customerType": {
+        "id": 2,
+        "name": "binhthuong"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Dinh",
+      "gender": true,
+      "dateOfBirth": "2023-03-26",
+      "customerType": {
+        "id": 2,
+        "name": "binhthuong"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Dinh",
+      "gender": false,
+      "dateOfBirth": "2023-03-24",
+      "customerType": {
+        "id": 2,
+        "name": "binhthuong"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "vip"
+    },
+    {
+      "id": 2,
+      "name": "binhthuong"
+    }
+  ]
+}

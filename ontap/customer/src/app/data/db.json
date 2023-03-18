@@ -1,0 +1,68 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Dinh Tong",
+      "gender": false,
+      "dateOfBirth": "2012-05-06",
+      "customerType": {
+        "id": 3,
+        "name": "Ngu"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dinh THong",
+      "gender": false,
+      "dateOfBirth": "2012-05-06",
+      "customerType": {
+        "id": 1,
+        "name": "Gioi"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Dinh THong",
+      "gender": false,
+      "dateOfBirth": "2012-05-06",
+      "customerType": {
+        "id": 1,
+        "name": "Gioi"
+      }
+    },
+    {
+      "id": 5,
+      "name": "123123",
+      "gender": false,
+      "dateOfBirth": "2023-03-24",
+      "customerType": {
+        "id": 2,
+        "name": "Kha"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Nam Ka",
+      "gender": true,
+      "dateOfBirth": "2023-03-31",
+      "customerType": {
+        "id": 2,
+        "name": "Kha"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Gioi"
+    },
+    {
+      "id": 2,
+      "name": "Kha"
+    },
+    {
+      "id": 3,
+      "name": "Ngu"
+    }
+  ]
+}

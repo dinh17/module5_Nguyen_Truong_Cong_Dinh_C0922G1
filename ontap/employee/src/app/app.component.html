@@ -1,0 +1,174 @@
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+<!--modal Delete-->
+<!--<td><a [routerLink]="['/customer-edit/',customer.id]" class="btn btn-warning">Edit</a></td>-->
+
+<!--<td>-->
+<!--  <button type="button" class="btn btn-primary" data-bs-toggle="modal"-->
+<!--          data-bs-target="#exampleModal" (click)="temp=customer">Delete</button>-->
+<!--</td>-->
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body" style="color: red">-->
+<!--        Bạn có chắc chắn muốn xoá {{temp.name}} không ?-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary" (click)="delete(temp.id)" data-bs-dismiss="modal">Delete</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--phaan trang-->
+<!--| paginate: { itemsPerPage: 1, currentPage: p }-->
+<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--import {NgxPaginationModule} from "ngx-pagination";-->
+
+
+<!--icon-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--Swal.fire(-->
+<!--'Deleted!',-->
+<!--'Your file has been deleted.',-->
+<!--'success'-->
+<!--);-->
+<!--import Swal from 'sweetalert2';-->
+
+<!--&#45;&#45;&#45;&#45;modal-->
+<!--<h2 class="d-flex justify-content-center text-danger">Thêm mới khách hàng</h2>-->
+<!--<div class="card bg-success offset-3 col-6">-->
+<!--  <form [formGroup]="customerGroup" (ngSubmit)="submit()">-->
+<!--    <div class="m-4 row">-->
+<!--      <div class="col-sm-2">Customer Type Name</div>-->
+<!--      <div class="col-sm-10">-->
+<!--        <select class="form-select" formControlName="customerType">-->
+<!--          <option *ngFor="let item of customerType" [ngValue]="item">{{item.name}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="m-4 row">-->
+<!--      <label  class="col-sm-2 col-form-label">Name: </label>-->
+<!--      <div class="col-sm-10">-->
+<!--        <input type="text" class="form-control" formControlName="name">-->
+<!--        <p class="text-danger" *ngIf="customerGroup.controls.name.hasError('pattern')&&customerGroup.controls.name.touched">k dung dinh dang</p>-->
+<!--        <p class="text-danger" *ngIf="customerGroup.controls.name.hasError('required')&&customerGroup.controls.name.touched">phair co</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="m-4 row">-->
+<!--      <label  class="col-sm-2 col-form-label">Date Of Birth: </label>-->
+<!--      <div class="col-sm-10">-->
+<!--        <input type="date" class="form-control"  formControlName="dateOfBirth">-->
+<!--        <p class="text-danger" *ngIf="customerGroup.controls.dateOfBirth.hasError('required')&&customerGroup.controls.dateOfBirth.touched">Hãy nhập dữ liệu</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="m-4 row">-->
+<!--      <label class="col-sm-2">Gender: </label>-->
+<!--      <div class="col-sm-10">-->
+<!--        <label>-->
+<!--          &lt;!&ndash;          <input type="radio" [value]="true" [(ngModel)]="select" formControlName="gender">&ndash;&gt;-->
+<!--          <input type="radio" [value]="true"  formControlName="gender">-->
+<!--        </label>Nam-->
+<!--        <label>-->
+<!--          <input type="radio"  [value]="false" formControlName="gender">-->
+<!--        </label>Nữ-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <button type="submit" class="d-flex justify-content-center btn btn-danger" style="margin: 0 auto">Save</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+
+
+<!--search-->
+
+<!--<div class="d-flex m-2">-->
+<!--  <input class="form-control me-2" type="search" placeholder="Search Name" aria-label="Search" [(ngModel)]="nameSearch">-->
+<!--  <select class="form-control" [(ngModel)]="customerTypeId">-->
+<!--    <option [ngValue] = 0 >Customer Type Name</option>-->
+<!--    <option *ngFor="let item of customerType" [ngValue]="item.id">{{item.name}}</option>-->
+<!--  </select>-->
+<!--  <button class="btn btn-outline-success" (click)="search()" >Search</button>-->
+<!--</div>-->
+
+
+<!--if (this.customerTypeId>0) {-->
+<!--this.customerService.searchAll(this.nameSearch,this.customerTypeId).subscribe(next => {-->
+<!--this.customer = next;-->
+<!--});-->
+<!--} else {-->
+<!--this.customerService.searchByName(this.nameSearch).subscribe(next => {-->
+<!--this.customer = next;-->
+<!--});-->
+<!--}-->
+<!--}-->
+
+<!--searchAll(nameSearch: string, customerTypeId: number): Observable<Customer[]> {-->
+<!--return this.httpClient.get<Customer[]>('http://localhost:3000/customer?name_like=' + nameSearch + '&customerType.id=' + customerTypeId);-->
+<!--}-->
+
+
+<!--searchByName(nameSearch: string): Observable<Customer[]> {-->
+<!--return this.httpClient.get<Customer[]>('http://localhost:3000/customer?name_like=' + nameSearch);-->
+<!--}-->
+
+
+<!--edit&#45;&#45;&#45;&#45;-->
+<!--customer: Customer;-->
+<!--customerType: CustomerType[];-->
+
+<!--customerGroup: FormGroup = new FormGroup({-->
+<!--id: new FormControl('', [Validators.required]),-->
+<!--name: new FormControl('', [Validators.required]),-->
+<!--gender: new FormControl('', [Validators.required]),-->
+<!--dateOfBirth: new FormControl('', [Validators.required]),-->
+<!--customerType: new FormControl(),-->
+<!--  });-->
+
+
+<!--constructor(private activatedRoute: ActivatedRoute,-->
+<!--private customerService: CustomerService,-->
+<!--private customerTypeService: CustomerTypeService,-->
+<!--private router: Router) {-->
+<!--this.customerTypeService.getAllCustomerType().subscribe(next => {-->
+<!--this.customerType = next;-->
+<!--});-->
+<!--this.activatedRoute.paramMap.subscribe(next => {-->
+<!--const id = next.get('id');-->
+<!--customerService.findById(parseInt(id)).subscribe(next => {-->
+<!--this.customer = next;-->
+<!--this.customerGroup.patchValue(next);-->
+<!--});-->
+<!--});-->
+<!--}-->
+
+<!--ngOnInit(): void {-->
+<!--}-->
+
+<!--submit() {-->
+<!--if (this.customerGroup.valid) {-->
+<!--this.customerService.edit(this.customerGroup.value).subscribe(next => {-->
+<!--Swal.fire(-->
+<!--'EDIT!',-->
+<!--'Your file has been edited.',-->
+<!--'success'-->
+<!--)-->
+<!--this.router.navigateByUrl('/customer-list');-->
+<!--})-->
+<!--}-->
+<!--  }-->
+
+<!--compare(s1: any, s2: any) {-->
+<!--return s1 && s2 ? s1.id === s2.id : s1 === s2;-->
+<!--}-->

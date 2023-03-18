@@ -1,0 +1,74 @@
+<app-home></app-home>
+<h1>Danh sach cac xe dang ky o ben xe XYZ</h1>
+<div>
+  <button>
+    Them Moi
+  </button>
+</div>
+<table class="table table-striped ">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>So Xe</th>
+    <th>Loai Xe</th>
+    <th>Ten Nha Xe</th>
+    <th>Diem di</th>
+    <th>Diem den</th>
+    <th>So dien thoai</th>
+    <th>Email</th>
+    <th>Gio di</th>
+    <th>Gio den</th>
+    <th> Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let bus of bus ,index as i">
+    <td>{{i+1}}</td>
+    <td>{{bus.numberCard}}</td>
+    <td>{{bus.category.name}}</td>
+    <td>{{bus.nameBus}}</td>
+    <td>{{bus.localForm}}</td>
+    <td>{{bus.localEnd}}</td>
+    <td>{{bus.numberPhone}}</td>
+    <td>{{bus.email}}</td>
+    <td>{{bus.timeOut}}</td>
+    <td>{{bus.timeIn}}</td>
+    <td>
+      <a class="btn btn-success" [routerLink]="['/edit',bus.id]">Edit</a>
+      ||
+      <button type="button" class=" btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="temp=bus">Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+  <button  type="button"  (click)="getAll(number - 1)" *ngIf="!firstPage">
+    <span class="carousel-control-prev-icon" aria-hidden="true">previous</span>
+  </button>
+
+
+  <button type="button"  (click)="getAll(number +1 )" *ngIf="!lastPage">
+    <span class="carousel-control-prev-icon" aria-hidden="true">next</span>
+  </button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color: red">
+        Bạn có chắc chắn muốn xoá thong tin cua xe khach co so xe {{temp.numberCard}} không ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="delete(temp.id)" data-bs-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

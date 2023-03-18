@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>STT/th>
+    <th>name</th>
+    <th>gender</th>
+    <th>birthDay</th>
+    <th>category</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of employee | paginate: { itemsPerPage: 1, currentPage: p },index as i">
+    <td>{{i + 1}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.gender ? 'Nam' : 'Nu'}}</td>
+    <td>{{employee.dateOfBirth}}</td>
+    <td>{{employee.category.name}}</td>
+  </tr>
+
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

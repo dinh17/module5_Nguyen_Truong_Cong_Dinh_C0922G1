@@ -1,0 +1,68 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "name": "Dinh3",
+      "dateOfBirth": "2023-03-25",
+      "gender": true,
+      "category": {
+        "id": 3,
+        "name": "Gioi"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Dinh3",
+      "dateOfBirth": "2023-02-24",
+      "gender": false,
+      "category": {
+        "id": 1,
+        "name": "Ca biet"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dinh4",
+      "dateOfBirth": "2023-02-24",
+      "gender": false,
+      "category": {
+        "id": 1,
+        "name": "Ca biet"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Dinh Dinh",
+      "dateOfBirth": "2023-02-24",
+      "gender": true,
+      "category": {
+        "id": 3,
+        "name": "Gioi"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Dinh Dinh Nam",
+      "dateOfBirth": "2023-02-24",
+      "gender": true,
+      "category": {
+        "id": 1,
+        "name": "Ca biet"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Ca biet"
+    },
+    {
+      "id": 2,
+      "name": "Tot"
+    },
+    {
+      "id": 3,
+      "name": "Gioi"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="d-flex m-2">
+  <input class="form-control me-2" type="search" placeholder="Search Name" aria-label="Search" [(ngModel)]="nameSearch">
+  <select class="form-control" [(ngModel)]="customerTypeId">
+    <option [ngValue] = 0 >Customer Type Name</option>
+    <option *ngFor="let item of customerType" [ngValue]="item.id">{{item.name}}</option>
+  </select>
+  <button class="btn btn-outline-success" (click)="search()" >Search</button>
+</div>
+
+<a routerLink="/add" class="btn btn-warning">Add</a>
+<table class="table">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>BirthDay</th>
+    <th>CustomerType</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor=" let customer of customers | paginate: { itemsPerPage: 2, currentPage: p },index as i">
+    <td>{{(p - 1) * 2 + i + 1}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.gender ? 'Nam' : 'nu'}}</td>
+    <td>{{customer.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
+    <td>{{customer.customerType.name}}</td>
+    <td><a  [routerLink]="['/edit/',customer.id]" class="btn btn-warning">Edit</a></td>
+    <td>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" (click)="temp=customer">Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color: red">
+        Bạn có chắc chắn muốn xoá {{temp.name}}  không ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="delete(temp.id)" data-bs-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

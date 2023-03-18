@@ -1,0 +1,47 @@
+<h2 class="d-flex justify-content-center text-danger">Thêm mới khách hàng</h2>
+<div class="card bg-success offset-3 col-6">
+  <form [formGroup]="customerGroup" (ngSubmit)="submit()">
+
+    <div class="m-4 row">
+      <div class="col-sm-2">Customer Type</div>
+      <div class="col-sm-10">
+        <select class="form-select" formControlName="customerType" [compareWith]="compare">
+          <option *ngFor="let item of customerType" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="m-4 row">
+      <label class="col-sm-2 col-form-label">Name: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="name">
+        <p class="text-danger"
+           *ngIf="customerGroup.controls.name.touched&&customerGroup.controls.name.hasError('require')">phai nhap</p>
+        <p class="text-danger"
+           *ngIf="customerGroup.controls.name.touched&&customerGroup.controls.name.hasError('minlength')">phai nhap</p>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label class="col-sm-2 col-form-label">Date Of Birth: </label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" formControlName="dateOfBirth">
+        <p class="text-danger"
+           *ngIf="customerGroup.controls.dateOfBirth.touched&&customerGroup.controls.dateOfBirth.hasError('require')">
+          Hãy nhập dữ liệu</p>
+      </div>
+    </div>
+    <div class="m-4 row">
+      <label class="col-sm-2">Gender: </label>
+      <div class="col-sm-10">
+        <label>
+          <input type="radio" [value]="true" formControlName="gender">
+        </label>Nam
+        <label>
+          <input type="radio" [value]="false" formControlName="gender">
+        </label>Nữ
+      </div>
+    </div>
+    <button type="submit" class="d-flex justify-content-center btn btn-danger" style="margin: 0 auto">Save</button>
+  </form>
+</div>

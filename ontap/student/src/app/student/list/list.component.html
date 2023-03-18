@@ -1,0 +1,42 @@
+
+  <table class="table table-striped border-1">
+    <thead>
+    <tr>
+      <td>STT</td>
+      <td>Name</td>
+      <td>Date Of Birth</td>
+      <td>Gender</td>
+      <td>Category</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students;index as i">
+      <td>{{i + 1}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
+      <td>{{student.gender?'Nam':'Nu'}}</td>
+      <td>{{student.category.name}}</td>
+      <td><a  [routerLink]="['/edit/',student.id]" class="btn btn-warning">Edit</a></td>
+      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="temp=student">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="color: red">
+          Bạn có chắc chắn muốn xoá {{temp.name}} không ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="delete(temp.id)" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>

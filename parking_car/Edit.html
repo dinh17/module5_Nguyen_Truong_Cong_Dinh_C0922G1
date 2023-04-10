@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉnh sửa thông tin nhân viên</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-9">
+                    <div class="card" style="border-radius: 15px;margin-top: 50px">
+                        <div class="card-body" style="box-shadow: 0 0 20px 0 #253365;border-radius: 15px">
+                            <form>
+                                <h1 style="text-align: center; margin-top: 30px; margin-bottom: 30px">SỬA THÔNG TIN NHÂN
+                                    VIÊN</h1>
+
+
+                                <div class="row d-flex">
+                                    <div class="row align-items-center py-3 col-12">
+                                        <div class="col-2">
+                                            <label style="font-weight: bold">Họ và tên:</label>
+                                        </div>
+                                        <div class="col-10 d-flex">
+
+                                            <input class="form-control" type="text"
+                                                   style="margin-right: 23px;margin-left: -3px">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span style="color:red" class="error-message">Tên đăng nhập không hợp lệ</span>
+                                <div class="row d-flex">
+                                    <div class="row align-items-center py-3 col-6">
+                                        <div class="col-4">
+                                            <label style="font-weight: bold">Ngày sinh:</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input class="form-control" type="date">
+                                        </div>
+                                    </div>
+
+                                    <div class="row align-items-center py-3 col-6">
+                                        <div class="col-4">
+                                            <label style="font-weight: bold" class="mb-0">CCCD:<b style="color: red">*</b></label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row d-flex">
+                                    <div class="row align-items-center py-3 col-6">
+                                        <div class="col-4">
+                                            <label style="font-weight: bold">Email: <b style="color: red">*</b></label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center py-3 col-6">
+                                        <div class="col-4">
+                                            <label style="font-weight: bold" class="mb-0">SĐT: <b
+                                                    style="color: red">*</b></label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row d-flex ">
+
+                                    <div class="row align-items-center py-3 col-6">
+                                        <div class="col-4">
+                                            <label style="font-weight: bold" class="mb-0">Chức vụ:</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <select class="form-control" type="text">
+                                                <option>Chức vụ</option>
+                                                <option>Giám sát viên</option>
+                                                <option>Trưởng ca</option>
+                                                <option>Nhân viên giữ xe</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row align-items-center py-3 col-6">
+                                        <div class="col-4">
+                                            <label style="font-weight: bold" class="mb-0">Giới tính:</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <label><input class=="form-check-input" type="radio" name="gender"
+                                                          value="true"> Nam</label>
+                                            <label><input class=="form-check-input" type="radio" name="gender"
+                                                          value="false"> Nữ</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row  py-3">
+                                    <div class="col-2">
+                                        <label style="font-weight: bold">Ðịa chỉ: <b
+                                                style="color: red">*</b></label>
+                                    </div>
+                                    <div class="col-10 d-flex">
+                                        <div class="col-3">
+                                            <select class="form-control" type="text"
+                                                    style="margin-left: -10px">
+                                                <option>Chọn tỉnh</option>
+                                                <option>Quảng Nam</option>
+                                                <option>Ðà Nẵng</option>
+                                                <option>Hà Nội</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-1"></div>
+
+                                        <div class="col-3">
+                                            <select class="form-control" type="text">
+                                                <option>Chọn huyện</option>
+                                                <option>Điện Nam</option>
+                                                <option>Điện Ngọc</option>
+                                                <option>Tam Kỳ</option>
+                                                <option>Ngũ Hành Sơn</option>
+                                                <option>Hải Châu</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="col-3 d-flex">
+
+                                            <select class="form-control" type="text"
+                                                    style="margin-left:4px;margin-right:-35px">
+                                                <option>Chọn xã</option>
+                                                <option>Tam Thăng</option>
+                                                <option>Tam Tiến</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-1"></div>
+                                    </div>
+                                </div>
+
+
+                                <div align="center" class="px-5 py-4">
+                                    <button class="btn  py-3 px-4 me-3" style="background-color: #e4e6eb">Huỷ</button>
+                                    <button
+                                            class="btn btn-warning py-3 px-4"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #E67E22">
+                                        Chỉnh sửa
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+</body>
+</html>

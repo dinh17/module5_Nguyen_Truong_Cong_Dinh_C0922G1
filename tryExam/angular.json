@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ontap3": {
+    "tryExam": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ontap3",
+            "outputPath": "dist/tryExam",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +27,7 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
             "production": {
@@ -65,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ontap3:build"
+            "browserTarget": "tryExam:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ontap3:build:production"
+              "browserTarget": "tryExam:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ontap3:build"
+            "browserTarget": "tryExam:build"
           }
         },
         "test": {
@@ -94,37 +92,37 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "tryExam:serve"
           },
-          "lint": {
-            "builder": "@angular-devkit/build-angular:tslint",
-            "options": {
-              "tsConfig": [
-                "tsconfig.app.json",
-                "tsconfig.spec.json",
-                "e2e/tsconfig.json"
-              ],
-              "exclude": [
-                "**/node_modules/**"
-              ]
-            }
-          },
-          "e2e": {
-            "builder": "@angular-devkit/build-angular:protractor",
-            "options": {
-              "protractorConfig": "e2e/protractor.conf.js",
-              "devServerTarget": "ontap3:serve"
-            },
-            "configurations": {
-              "production": {
-                "devServerTarget": "ontap3:serve:production"
-              }
+          "configurations": {
+            "production": {
+              "devServerTarget": "tryExam:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ontap3",
+  "defaultProject": "tryExam",
   "cli": {
     "analytics": false
   }

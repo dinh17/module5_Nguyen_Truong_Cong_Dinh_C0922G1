@@ -1,0 +1,25 @@
+<table class="table table-striped ">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Tên Nhân Viên</th>
+    <th>Phòng Ban</th>
+    <th>Chức vụ</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employees of employee ,index as i">
+    <td>{{(number)*2+i+1}}</td>
+    <td>{{employees.name}}</td>
+    <td>{{employees.department.name}}</td>
+    <td>{{employees.position.name}}</td>
+  </tr>
+  </tbody>
+</table>
+<div class="pagination">
+  <button  (click)="getAllEmployee(0)">First</button>
+  <button  (click)="getAllEmployee(number - 1)">Previous</button>
+  <button  (click)="getAllEmployee(number + 1)">Next</button>
+</div>
